@@ -1,0 +1,789 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+}
+
+body, button{
+    font-family: 'Varela Round', sans-serif;
+}
+button:hover{
+    opacity: 0.8;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: montserrat, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+.clear{
+    clear: both;
+}
+
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+/********************************** General Section Caption **********************/
+.caption{
+    text-align: center;
+}
+.caption h2{
+    font-size: 35px;
+}
+.caption span{
+    display: block;
+    margin: 10px auto 70px auto;
+    width: 65px;
+    height: 4px;
+    background-color: #6195ff;
+}
+
+.pd-y {
+    padding: 120px 0;
+}
+/****************** Offer Section Left to Right Effect *********************/
+/****************** About Section Left to Right Effect ********************/
+/****************** Pricing Section Top to Bottom Effect *****************/
+.ltr-effect , .tb-effect{
+    position: relative;
+}
+
+.ltr-effect::after , .tb-effect::after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    background: #333;
+    z-index: -1; /*يبقي ورا الكلام*/
+    transition: all 0.5s;
+}
+
+.ltr-effect::after{
+    width: 0;
+    height: 100%;  
+}
+.ltr-effect:hover::after{
+    width: 100%;
+}
+/* Pricing */
+.tb-effect::after{
+    width: 100%;
+    height: 0;
+}
+.tb-effect:hover::after{
+    height: 100%;
+}
+.tb-effect:hover .Pricing-title{
+    color: #6195ff;
+}
+.tb-effect:hover .Pricing-item-permonth{
+    color: #fff;
+}
+
+/********************************** Header Section ******************************/
+header{
+    width: 100%;
+    position: fixed;
+    z-index: 128;
+    background: #fff;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+header .logo{
+    width: 35%;
+    float: left;
+}
+
+header .logo img{
+    width: 30%;
+    margin-top: 5px;
+}
+
+header .navbar{
+    width: 65%;
+    float: left;
+}
+
+.navbar > ul{
+    list-style: none;
+}
+
+.navbar ul  li{
+    display: inline-block;
+    padding-left: 6px;
+}
+
+.navbar > ul > li > a{
+    color: #000;
+    display: block;
+    padding: 20px 11px;
+    font-size: 16px;
+}
+
+.navbar > ul > li > a.active::after, .navbar > ul > li > a::after{
+    content: "";
+    display: block;
+    height: 3px;
+    background-color: #6195ff;
+}
+
+.navbar  ul > li > a.active::after {
+    width: 100%;
+}
+.navbar  ul > li > a::after{
+    width: 0;
+    transition: width 0.5s;
+}
+.navbar  ul > li > a:hover::after{
+    width: 100%;
+}
+
+.dropdown{
+    position: relative;
+}
+
+.dropdown-menu{
+    position: absolute;
+    background: #6195ff;
+    text-align: center;
+    width: 170%;
+    left: -20%;
+    top: 90%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s;
+}
+
+.dropdown-menu li a{ 
+    display: block; 
+    color: #fff;
+    padding: 10px;
+}
+
+.dropdown:hover .dropdown-menu{
+    opacity: 1;
+    visibility: visible;
+}
+
+/********************************** Home Section ******************************/
+section.home{
+    text-align: center;
+    height: 100vh;
+    background-image: url(../images/background/background1.webp);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.home-content{
+    position: absolute;
+    width: 65%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.home-content h1{
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.home-content p{
+    font-size: 20px;
+    color: #fff;
+    margin: 20px 0;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.home-content .btn{
+    width: 160px;
+    height: 50px;
+    font-size: 18px;
+    padding: 10px 0;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.home-content .btn-learn{
+    background-color: #6195ff;
+    color: #fff;
+    margin-left: 10px;
+}
+
+/********************************* About Section ******************************/
+.about-item{
+    width: 30%;
+    float: left;
+    border: 1px solid #e8e8e8;
+    text-align: center;
+    padding: 40px 20px;
+}
+.about-item.mg{
+    margin: 0 5%;
+}
+
+.about-item i{
+    font-size: 40px;
+    color: #6195ff;
+    margin-bottom: 15px;
+}
+
+.about-item h2{
+    transition: color 0.5s;
+}
+.about-item:hover h2{
+    color: #fff;
+}
+
+.about-item p{
+    margin: 15px 0;
+    line-height: 1.5;
+    color: #999;
+}
+.about-item a{
+    color: #6195ff;
+}
+/********************************* portfolio Section ******************************/
+section.portfolio{
+    background: #f9f9f9;
+}
+
+.portfolio-item{
+    width: 32%;
+    float: left;
+    padding: 15px;
+    margin-bottom: 2%;
+    position: relative;
+}
+
+.portfolio-item.mg{
+    margin: 0 2%;
+}
+
+.portfolio-item img{
+    width: 100%;
+}
+
+.portfolio-item .portfolio-layer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+}
+
+.portfolio-item:hover .portfolio-layer{
+    opacity: 1;
+    visibility: visible;
+}
+
+.portfolio-layer .portfolio-layer-content{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.portfolio-layer-content span{
+    display: block;
+    font-size: 17px;
+    font-weight: 700;
+    color: #6195ff;
+    position: relative;
+    top: 10px;
+    opacity: 0;
+    transition: all 0.5s;
+    transition-delay: 0.1s;
+}
+.portfolio-layer-content h3{
+    color: #fff;
+    margin: 5px 0;
+    position: relative;
+    top: 10px;
+    opacity: 0;
+    transition: all 0.5s;
+    transition-delay: 0.2s;
+}
+.portfolio-layer-content i{
+    font-size: 18px;
+    margin: 8px 2px;
+    padding: 10px;
+    background: #6195ff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    top: 10px;
+    opacity: 0;
+    transition: all 0.5s;
+    transition-delay: 0.3s;
+}
+
+.portfolio-item:hover .portfolio-layer-content span,
+.portfolio-item:hover .portfolio-layer-content h3,
+.portfolio-item:hover .portfolio-layer-content i{
+    top: 0;
+    opacity: 1;
+}
+/********************************* Offer Section ******************************/
+section.offer{
+    background: #f9f9f9;
+}
+
+.offer-item{
+    width: 30%;
+    float: left;
+    border: 1px solid #e8e8e8;
+    margin-bottom: 30px;
+    padding: 20px 15px 30px 70px;
+    position: relative;
+}
+.offer-item.mg{
+    margin: 0 5%;
+}
+
+.offer-item i{
+    position: absolute;
+    top: 13%;
+    left: 7%;
+    color: #6195ff;
+}
+.offer-item i.mobile{
+    margin-left: 3.5%;
+    font-size: 40px;
+}
+.offer-item h2{
+    margin-bottom: 13px;
+    transition: color 0.6s;
+}
+
+.offer-item p{
+    line-height: 1.4;
+    color: #999;
+}
+
+.offer-item.ltr-effect{
+    z-index: 1;  /* كان في مشكله ظهرت هنا ان الايفكت مش بيشنغل ف دا الحل عشان يظهر*/
+}
+
+.offer-item:hover h2{
+    color: #fff;
+}
+/********************************* Service Section ******************************/
+section.Service{
+    background-color: #f9f9f9;
+}
+
+.Service-item{
+    width: 50%;
+    float: left;
+}
+
+.Service-item .caption h2{
+    text-align: left;
+  
+}
+.Service-item .caption span{
+    margin: 10px 0 50px 0;
+}
+
+.Service-item p{
+    color: #999;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.Service-item ul.Service-list{
+    list-style: none;
+}
+.Service-item ul.Service-list li{
+    margin: 15px 0;
+}
+.Service-item ul.Service-list li i{
+    color: #6195ff;
+    border: 1px solid #6195ff;
+    border-radius: 50%;
+    padding: 5px;
+}
+.Service-item.image{
+    padding-left: 30px;
+    margin-top: 35px;
+}
+.Service-item .Service-img img{
+    width: 100%;
+}
+
+.Service-item ul.Service-boltts{
+    text-align: center;
+}
+.Service-item ul.Service-boltts li{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 10px 5px;
+    border-radius: 50%;
+    background-color: #999;
+}
+.Service-item ul.Service-boltts li.active{
+    background-color: #6195ff;
+}
+.Service-item ul.Service-boltts li:hover{
+    background-color: #6195ff;
+}
+/********************************** Number Section ******************************/
+section.number{
+    position: relative;
+    background-image: url(../images/background/background2.webp);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 300px;
+    text-align: center;
+}
+
+.number-item{
+    width: 25%;
+    float: left;
+    padding: 100px 0;
+}
+
+.number-item i{
+    color: #6195ff;
+    margin-bottom: 15px;
+}
+.number-item h3{
+    color: #fff;
+    font-size: 30px;
+}
+.number-item span{
+    color: #fff;
+}
+/********************************** Pricing Section ******************************/
+.Pricing-item{
+    width: 30%;
+    float: left;
+    text-align: center;
+    border: 1px solid #e8e8e8;
+}
+
+.Pricing-item.mg{
+    margin: 0 5%;
+}
+
+.Pricing-item .Pricing-title{
+    display: block;
+    font-size: 17px;
+    color: #999;
+    padding-top: 20px;
+    transition: all 0.5s;
+}
+
+.Pricing-item .Pricing-item-permonth{
+    width: 130px;
+    padding: 30px 0;
+    border: 2px solid #6195ff;
+    border-radius: 50%;
+    margin: 20px auto;
+    transition: all 0.5s;
+}
+.Pricing-item .Pricing-item-permonth h3{
+    font-size: 40px;
+}
+.Pricing-item .Pricing-item-permonth span{
+    font-weight: bold;
+}
+
+.Pricing-item ul{
+    list-style: none;
+}
+
+.Pricing-item li{
+    margin: 15px 0;
+    color: #999;
+}
+
+.Pricing-item button{
+    background: none;
+    width: 150px;
+    height: 50px;
+    color: #6195ff;
+    border: 2px solid #6195ff;
+    font-size: 15px;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.Pricing-item button:hover{
+    background: #6195ff;
+    color: #fff;
+}
+/********************************** testimonial Section ******************************/
+section.testimonial{
+    position: relative;
+    background-image: url(../images/background/background3.webp);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 400px;
+}
+
+.testimonial-item{
+    width: 50%;
+    float: left;
+    padding: 98px 0;
+    color: #fff;
+}
+
+.testimonial-img{
+    padding: 0 0 50px 80px;
+    position: relative;
+}
+
+.testimonial-img img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+}
+
+.testimonial-img span{
+    color: #6195ff;
+}
+/********************************** Team Section ******************************/
+.team-item{
+    width: 30%;
+    float: left;
+    background: #e8e8e8;
+    padding: 30px;
+    text-align: center;
+}
+.team-item .team-img{
+    position: relative;
+}
+.team-item .team-img img{
+    width: 100%;
+}
+
+.team-info h3{
+    color: #222;
+    margin: 10px 0;
+    transition: all 0.5s;
+}
+
+.team-info span{
+    color: #999;
+    transition: all 0.5s;
+}
+
+.team-overlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s;
+}
+
+.team-item:hover .team-overlay{
+    opacity: 1;
+    visibility: visible;
+}
+
+.team-item.tb-effect{
+    z-index: 1; /*عشان يطلع فوق الباك جراوند*/
+}
+
+.team-item:hover .team-info h3{
+    color: #fff;
+}
+.team-item:hover .team-info span{
+    color: #6195ff;
+}
+
+.team-overlay a{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: #7ba7ff;
+    color: #fff;
+    margin-left: auto;
+}
+.team-overlay a i{
+    line-height: 40px;
+}
+
+.team-item.mg{
+    margin: 0 5%;
+}
+/********************************** Blog Section ******************************/
+.bolg-item{
+    width: 30%;
+    float: left;
+    background: #f8f8f8;
+    padding: 10px;
+}
+
+.bolg-item .blog-img img{
+    width: 100%;
+}
+
+.bolg-item ul{
+    list-style: none;
+}
+.bolg-item ul li{
+    display: inline-block;
+    margin: 15px 10px;
+}
+.bolg-item ul li i{
+    color: #6195ff;
+}
+
+.bolg-item h3{
+    margin: 10px;
+    font-size: 18px;
+}
+.bolg-item p{
+    margin: 10px;
+    line-height: 1.5;
+    color: #999;
+}
+.bolg-item a{
+    margin: 10px;
+    color: #6195ff;
+}
+.bolg-item.mg{
+    margin: 0 5%;
+}
+/********************************** Contact Section ******************************/
+.contact-icon{
+    text-align: center;
+}
+.contact-icon ul{
+    list-style: none;
+}
+.contact-icon ul li {
+    display: inline-block;
+    margin: 10px 90px;
+}
+.contact-icon ul li i{
+    display: block;
+    color: #6195ff;
+    margin-bottom: 15px;
+}
+.contact-icon ul li h3{
+    margin: 7px 0;
+}
+.contact-icon ul li p{
+    color: #999;
+}
+/* Form */
+.contact-form{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.contact-form .contcat-form-text input{
+    width: 370px;
+    height: 40px;
+    margin: 0 5px;
+    padding: 10px;
+    border: 1px solid #e8e8e8;
+    outline-color: #6195ff;
+    background: #f8f8f8;
+    font-size: 15px;
+}
+
+.contact-form input[type=subject]{
+    display: block;
+    margin: 15px auto;
+    padding: 10px;
+    width: 755px;
+    height: 40px;
+    border: 1px solid #e8e8e8;
+    outline-color: #6195ff;
+    background: #f8f8f8;
+    font-size: 15px;
+}
+
+.contact-form textarea{
+    resize: none;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #e8e8e8;
+    outline-color: #6195ff;
+    background: #f8f8f8;
+    font-size: 15px;
+}
+
+.contact-form button{
+    width: 150px;
+    height: 40px;
+    border: 0;
+    border-radius: 5px;
+    background: #6195ff;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+/********************************** Contact Section ******************************/
+footer{
+    margin-top: 120px;
+    padding-top: 70px;
+    background-color: #1c1d21;
+    text-align: center;
+}
+
+.footer-logo{
+
+}
+.footer-logo img{
+
+}
+.footer-icon ul{
+    list-style: none;
+}
+.footer-icon ul li{
+    display: inline-block;
+    margin: 15px 0;
+}
+
+.footer-icon a{
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background: #6195ff;
+    color: #fff;
+    transition: all 0.3s;
+}
+.footer-icon a:hover{
+    opacity: .7;
+}
+
+footer p{
+    color: #999;
+    margin-top: 5px;
+    padding-bottom: 25px;
+}
